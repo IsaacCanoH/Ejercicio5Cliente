@@ -1,0 +1,14 @@
+target/
+node_modules/
+test-results/
+playwright-report/
+.idea/
+.vscode/
+.settings/
+.classpath
+.project
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
