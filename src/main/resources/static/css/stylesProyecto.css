@@ -68,4 +68,28 @@ body{
 	text-align: center;
 }
 
+/* Mantener el nombre y la papelera dentro de su columna, incluso con nombres largos. */
+:is(#tareasPendientes, #enCurso, #trabajoTerminado) ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+:is(#tareasPendientes, #enCurso, #trabajoTerminado) .badge {
+    width: 100%;
+    min-width: 0;
+    white-space: normal;
+    align-items: center;
+}
+
+:is(#tareasPendientes, #enCurso, #trabajoTerminado) .badge > button:first-child {
+    flex: 1 1 0;
+    min-width: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+:is(#tareasPendientes, #enCurso, #trabajoTerminado) .badge > button + button {
+    flex-shrink: 0;
+}
+
 
