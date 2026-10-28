@@ -12,3 +12,6 @@ playwright-report/
 .env
 .env.*
 !.env.example
+
+# Notas locales para preparar el documento final.
+/README.md
