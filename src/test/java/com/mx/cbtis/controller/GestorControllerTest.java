@@ -47,6 +47,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.mx.cbtis.modelo.Comentarios;
 import com.mx.cbtis.modelo.Proyectos;
 import com.mx.cbtis.modelo.Tareas;
@@ -260,7 +261,9 @@ class GestorControllerTest {
         return Stream.of(
                 Arguments.of("/saveUsuario", "/addUsuario", Usuario.class, "/login"),
                 Arguments.of("/saveProyecto", "/addProyecto", Proyectos.class, "/inicio"),
-                Arguments.of("/saveTarea", "/addTareas", Tareas.class, "/proyecto?id_proyecto=8"));
+                Arguments.of("/saveTarea", "/addTareas", Tareas.class, "/proyecto?id_proyecto=8"),
+                Arguments.of("/saveProyecto", "/updateProyecto", Proyectos.class, "/inicio"),
+                Arguments.of("/saveTarea", "/updateTareas", Tareas.class, "/proyecto?id_proyecto=8"));
     }
 
     @ParameterizedTest
@@ -272,8 +275,18 @@ class GestorControllerTest {
                         .postForEntity(eq(API + backend), any(Object.class), eq(Integer.class)))) {
 
             var solicitud = post(ruta).contentType(MediaType.APPLICATION_FORM_URLENCODED);
-            mapper.readTree(json(tipo)).fields()
-                    .forEachRemaining(campo -> solicitud.param(campo.getKey(), campo.getValue().asText()));
+            ObjectNode esperado = (ObjectNode) mapper.readTree(json(tipo));
+            if (backend.startsWith("/add")) {
+                String identificador = tipo == Usuario.class ? "id_usuario"
+                        : tipo == Proyectos.class ? "id_proyecto" : "id_tarea";
+                esperado.putNull(identificador);
+            }
+            esperado.fields()
+                    .forEachRemaining(campo -> {
+                        if (!campo.getValue().isNull()) {
+                            solicitud.param(campo.getKey(), campo.getValue().asText());
+                        }
+                    });
 
             mvc.perform(solicitud)
                     .andExpect(status().is3xxRedirection())
@@ -283,7 +296,7 @@ class GestorControllerTest {
             ArgumentCaptor<Object> cuerpo = ArgumentCaptor.forClass(Object.class);
             verify(template).postForEntity(eq(API + backend), cuerpo.capture(), eq(Integer.class));
             assertInstanceOf(tipo, cuerpo.getValue());
-            assertEquals(mapper.readTree(json(tipo)), mapper.valueToTree(cuerpo.getValue()));
+            assertEquals(esperado, mapper.valueToTree(cuerpo.getValue()));
             verifyNoMoreInteractions(template);
         }
     }
@@ -293,7 +306,7 @@ class GestorControllerTest {
                 Arguments.of("/verificarLogin", "/getUsuarioLogin", Usuario.class, Usuario.class),
                 Arguments.of("/saveComentario", "/addComentario", Comentarios.class, Integer.class),
                 Arguments.of("/verificarTarea", "/addTareas", Tareas.class, Integer.class),
-                Arguments.of("/cambiosTareas", "/addTareas", Tareas.class, Integer.class));
+                Arguments.of("/cambiosTareas", "/updateTareas", Tareas.class, Integer.class));
     }
 
     @ParameterizedTest
@@ -353,7 +366,7 @@ class GestorControllerTest {
                         .postForEntity(eq(API + "/addTareas"), any(Object.class), eq(Integer.class)))) {
 
             ServletException resultado = assertThrows(ServletException.class,
-                    () -> mvc.perform(post("/cambiosTareas").contentType(MediaType.APPLICATION_JSON)
+                    () -> mvc.perform(post("/verificarTarea").contentType(MediaType.APPLICATION_JSON)
                             .content(JSON_TAREAS)));
 
             assertEquals(error, resultado.getCause());

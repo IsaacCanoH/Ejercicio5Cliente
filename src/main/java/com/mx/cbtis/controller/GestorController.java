@@ -84,7 +84,8 @@ public class GestorController {
 	public ModelAndView setSaveProyecto(@ModelAttribute Proyectos proyecto) {
 
     	RestTemplate template = new RestTemplate();
-    	String urlservicebd = "http://localhost:8081/addProyecto";
+		String urlservicebd = proyecto.getId_proyecto() == null
+				? "http://localhost:8081/addProyecto" : "http://localhost:8081/updateProyecto";
     	ResponseEntity<Integer> response = template.postForEntity(urlservicebd,proyecto,Integer.class);
 
     	return new ModelAndView("redirect:/inicio");
@@ -237,7 +238,8 @@ public class GestorController {
 	public ModelAndView setSaveTareas(@ModelAttribute Tareas tareas) {
 		
 		RestTemplate template = new RestTemplate();
-		String urlservicebd = "http://localhost:8081/addTareas";
+		String urlservicebd = tareas.getId_tarea() == null
+				? "http://localhost:8081/addTareas" : "http://localhost:8081/updateTareas";
 		ResponseEntity<Integer> response = template.postForEntity(urlservicebd, tareas, Integer.class);
 		ModelAndView mav = new ModelAndView("redirect:/proyecto");
 		mav.addObject("id_proyecto", tareas.getId_proyecto());
@@ -293,7 +295,7 @@ public class GestorController {
 	
 	@PostMapping("/cambiosTareas")
 	public ResponseEntity<Integer> cambiosTareas(@RequestBody Tareas paramDatos){
-		String urlservicebd = "http://localhost:8081/addTareas";
+		String urlservicebd = "http://localhost:8081/updateTareas";
 		RestTemplate template = new RestTemplate();
 		ResponseEntity<Integer> response = template.postForEntity(urlservicebd, paramDatos, Integer.class);
 		return response;
