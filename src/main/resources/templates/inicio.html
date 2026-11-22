@@ -24,7 +24,7 @@
         <nav class="navbar bg-body-tertiary navbar-expand-md">
             <div class="container-fluid">
                 <a class="navbar-brand">
-                    <img th:src="@{Images/logo.png}" alt="Logo" width="35" height="24" class="d-inline-block align-text-top">
+                    <img th:src="@{Images/logo.webp}" alt="Logo" width="35" height="24" class="d-inline-block align-text-top">
                 </a>
                 <button type="button" id="agregar" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btn-primary">Agregar</button>
             </div>
@@ -142,73 +142,73 @@
                 <button type="button" class="btn-close" onclick="cerrarFondos()" aria-label="Close"></button>
                 <div><p id='fondosTitulos'>Sólidos</p></div>
                 <div class='d-flex flex-wrap align-content-between'>
-                    <img th:src="@{Images/naranja.png}" alt="Color naranja" width="50px" height="30px" onclick="guardarRutaImagen('/Images/naranja.png');" class="rounded popover-image" id="imagenes">
-                    <img th:src="@{Images/durazno.png}" alt="Color durazno" width="50px" height="30px" onclick="guardarRutaImagen('/Images/durazno.png');" class="rounded popover-image" id="imagenes">
-                    <img th:src="@{Images/azulAqua.png}" alt="Color aqua" width="50px" height="30px" onclick="guardarRutaImagen('/Images/azulAqua.png');" class="rounded popover-image" id="imagenes">
-                    <img th:src="@{Images/azulCeleste.png}" alt="Color azul celeste" width="50px" height="30px" onclick="guardarRutaImagen('/Images/azulCeleste.png');" class="rounded popover-image" id="imagenes">
+                    <img th:attr="data-src=@{/Images/naranja.webp}" decoding="async" alt="Color naranja" width="50px" height="30px" onclick="guardarRutaImagen('/Images/naranja.webp');" class="rounded popover-image" id="imagenes">
+                    <img th:attr="data-src=@{/Images/durazno.webp}" decoding="async" alt="Color durazno" width="50px" height="30px" onclick="guardarRutaImagen('/Images/durazno.webp');" class="rounded popover-image" id="imagenes">
+                    <img th:attr="data-src=@{/Images/azulAqua.webp}" decoding="async" alt="Color aqua" width="50px" height="30px" onclick="guardarRutaImagen('/Images/azulAqua.webp');" class="rounded popover-image" id="imagenes">
+                    <img th:attr="data-src=@{/Images/azulCeleste.webp}" decoding="async" alt="Color azul celeste" width="50px" height="30px" onclick="guardarRutaImagen('/Images/azulCeleste.webp');" class="rounded popover-image" id="imagenes">
                 </div>
                 <div>
-                    <img th:src="@{Images/lima.png}" alt="Color lima" width="50px" height="30px" onclick="guardarRutaImagen('/Images/lima.png');" class="rounded popover-image" id="imagenes">                    
-                    <img th:src="@{Images/azulCobalto.png}" alt="Color cobalto" width="50px" height="30px" onclick="guardarRutaImagen('/Images/azulCobalto');" class="rounded popover-image" id="imagenes">
-                    <img th:src="@{Images/azulReal.png}" alt="Color azul" width="50px" height="30px" onclick="guardarRutaImagen('/Images/azulReal');" class="rounded popover-image" id="imagenes">
-                    <img th:src="@{Images/azulTurquesa.png}" alt="Color turquesa" width="50px" height="30px" onclick="guardarRutaImagen('/Images/azulTurquesa');" class="rounded popover-image" id="imagenes">
+                    <img th:attr="data-src=@{/Images/lima.webp}" decoding="async" alt="Color lima" width="50px" height="30px" onclick="guardarRutaImagen('/Images/lima.webp');" class="rounded popover-image" id="imagenes">
+                    <img th:attr="data-src=@{/Images/azulCobalto.webp}" decoding="async" alt="Color cobalto" width="50px" height="30px" onclick="guardarRutaImagen('/Images/azulCobalto.webp');" class="rounded popover-image" id="imagenes">
+                    <img th:attr="data-src=@{/Images/azulReal.webp}" decoding="async" alt="Color azul" width="50px" height="30px" onclick="guardarRutaImagen('/Images/azulReal.webp');" class="rounded popover-image" id="imagenes">
+                    <img th:attr="data-src=@{/Images/azulTurquesa.webp}" decoding="async" alt="Color turquesa" width="50px" height="30px" onclick="guardarRutaImagen('/Images/azulTurquesa.webp');" class="rounded popover-image" id="imagenes">
                 </div>
                 <div>
-                    <img th:src="@{Images/magenta.png}" alt="Color magneta" width="50px" height="30px" onclick="guardarRutaImagen('/Images/magenta.png');" class="rounded popover-image" id="imagenes">
-                    <img th:src="@{Images/morado.png}" alt="Color morado" width="50px" height="30px" onclick="guardarRutaImagen('/Images/morado');" class="rounded popover-image" id="imagenes">
-                    <img th:src="@{Images/naranja.png}" alt="Color naranja" width="50px" height="30px" onclick="guardarRutaImagen('/Images/naranja');" class="rounded popover-image" id="imagenes">
-				    <img th:src="@{Images/negro.png}" alt="Color negro" width="50px" height="30px" onclick="guardarRutaImagen('/Images/negro');" class="rounded popover-image" id="imagenes">
+                    <img th:attr="data-src=@{/Images/magenta.webp}" decoding="async" alt="Color magneta" width="50px" height="30px" onclick="guardarRutaImagen('/Images/magenta.webp');" class="rounded popover-image" id="imagenes">
+                    <img th:attr="data-src=@{/Images/morado.webp}" decoding="async" alt="Color morado" width="50px" height="30px" onclick="guardarRutaImagen('/Images/morado.webp');" class="rounded popover-image" id="imagenes">
+                    <img th:attr="data-src=@{/Images/naranja.webp}" decoding="async" alt="Color naranja" width="50px" height="30px" onclick="guardarRutaImagen('/Images/naranja.webp');" class="rounded popover-image" id="imagenes">
+				    <img th:attr="data-src=@{/Images/negro.webp}" decoding="async" alt="Color negro" width="50px" height="30px" onclick="guardarRutaImagen('/Images/negro.webp');" class="rounded popover-image" id="imagenes">
 				</div>
 				<div>
-				    <img th:src="@{Images/rojoBrillante.png}" alt=" Color rojo" width="50px" height="30px" onclick="guardarRutaImagen('/Images/rojoBrillante');" class="rounded popover-image" id="imagenes">
-				    <img th:src="@{Images/rosa.png}" alt="Color rosa" width="50px" height="30px" onclick="guardarRutaImagen('/Images/rosa');" class="rounded popover-image" id="imagenes">
-				    <img th:src="@{Images/turquesaOscuro.png}" alt=" Color turquesaOscuro" width="50px" height="30px" onclick="guardarRutaImagen('/Images/turquesaOscuro');" class="rounded popover-image" id="imagenes">
+				    <img th:attr="data-src=@{/Images/rojoBrillante.webp}" decoding="async" alt=" Color rojo" width="50px" height="30px" onclick="guardarRutaImagen('/Images/rojoBrillante.webp');" class="rounded popover-image" id="imagenes">
+				    <img th:attr="data-src=@{/Images/rosa.webp}" decoding="async" alt="Color rosa" width="50px" height="30px" onclick="guardarRutaImagen('/Images/rosa.webp');" class="rounded popover-image" id="imagenes">
+				    <img th:attr="data-src=@{/Images/turquesaOscuro.webp}" decoding="async" alt=" Color turquesaOscuro" width="50px" height="30px" onclick="guardarRutaImagen('/Images/turquesaOscuro.webp');" class="rounded popover-image" id="imagenes">
 				</div>
                 <div><p id='fondosTitulos'>Degradado</p></div>
                 <div class='d-flex flex-wrap align-content-between'>
-                    <img th:src="@{Images/degradado1.png}" alt="Color degradado1" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado1.png');" class="rounded popover-image" id="imagenes">
-                    <img th:src="@{Images/degradado2.png}" alt="Color degradado2" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado2.png');" class="rounded popover-image" id="imagenes">
-                    <img th:src="@{Images/degradado3.png}" alt="Color degradado3" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado3.png');" class="rounded popover-image" id="imagenes">
-                    <img th:src="@{Images/degradado4.png}" alt="Color degradado4" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado4.png');" class="rounded popover-image" id="imagenes">
+                    <img th:attr="data-src=@{/Images/degradado1.webp}" decoding="async" alt="Color degradado1" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado1.webp');" class="rounded popover-image" id="imagenes">
+                    <img th:attr="data-src=@{/Images/degradado2.webp}" decoding="async" alt="Color degradado2" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado2.webp');" class="rounded popover-image" id="imagenes">
+                    <img th:attr="data-src=@{/Images/degradado3.webp}" decoding="async" alt="Color degradado3" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado3.webp');" class="rounded popover-image" id="imagenes">
+                    <img th:attr="data-src=@{/Images/degradado4.webp}" decoding="async" alt="Color degradado4" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado4.webp');" class="rounded popover-image" id="imagenes">
 	              </div>  
 	              <div>                         
-	                <img th:src="@{Images/degradado5.png}" alt="Color degradado5" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado5.png');" class="rounded popover-image" id="imagenes">
-                    <img th:src="@{Images/degradado6.png}" alt="Color degradado6" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado6.png');" class="rounded popover-image" id="imagenes">
-                    <img th:src="@{Images/degradado7.png}" alt="Color degradado7" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado7.png');" class="rounded popover-image" id="imagenes">
-                    <img th:src="@{Images/degradado8.png}" alt="Color degradado8" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado8.png');" class="rounded popover-image" id="imagenes">
+	                <img th:attr="data-src=@{/Images/degradado5.webp}" decoding="async" alt="Color degradado5" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado5.webp');" class="rounded popover-image" id="imagenes">
+                    <img th:attr="data-src=@{/Images/degradado6.webp}" decoding="async" alt="Color degradado6" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado6.webp');" class="rounded popover-image" id="imagenes">
+                    <img th:attr="data-src=@{/Images/degradado7.webp}" decoding="async" alt="Color degradado7" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado7.webp');" class="rounded popover-image" id="imagenes">
+                    <img th:attr="data-src=@{/Images/degradado8.webp}" decoding="async" alt="Color degradado8" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado8.webp');" class="rounded popover-image" id="imagenes">
 		          </div>
 		          <div>
-                    <img th:src="@{Images/degradado9.png}" alt="Color  degradado9" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado9.png');" class="rounded popover-image" id="imagenes">
-		            <img th:src="@{Images/degradado10.png}" alt="Color degradado10" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado10.png');" class="rounded popover-image" id="imagenes">
-				    <img th:src="@{Images/degradado11.png}" alt="Color degradado11" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado11.png');" class="rounded popover-image" id="imagenes">
-				    <img th:src="@{Images/degradado12.png}" alt="Color degradado12" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado12.png');" class="rounded popover-image" id="imagenes">
+                    <img th:attr="data-src=@{/Images/degradado9.webp}" decoding="async" alt="Color  degradado9" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado9.webp');" class="rounded popover-image" id="imagenes">
+		            <img th:attr="data-src=@{/Images/degradado10.webp}" decoding="async" alt="Color degradado10" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado10.webp');" class="rounded popover-image" id="imagenes">
+				    <img th:attr="data-src=@{/Images/degradado11.webp}" decoding="async" alt="Color degradado11" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado11.webp');" class="rounded popover-image" id="imagenes">
+				    <img th:attr="data-src=@{/Images/degradado12.webp}" decoding="async" alt="Color degradado12" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado12.webp');" class="rounded popover-image" id="imagenes">
 			      </div>
 			      <div>
-                    <img th:src="@{Images/degradado13.png}" alt="Color degradado13" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado13.png');" class="rounded popover-image" id="imagenes">
-					<img th:src="@{Images/degradado14.png}" alt="Color degradado14" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado14.png');" class="rounded popover-image" id="imagenes">
-					<img th:src="@{Images/degradado15.png}" alt="Color degradado15" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado15.png');" class="rounded popover-image" id="imagenes">
-					<img th:src="@{Images/degradado16.png}" alt="Color degradado16" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado16.png');" class="rounded popover-image" id="imagenes">
+                    <img th:attr="data-src=@{/Images/degradado13.webp}" decoding="async" alt="Color degradado13" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado13.webp');" class="rounded popover-image" id="imagenes">
+					<img th:attr="data-src=@{/Images/degradado14.webp}" decoding="async" alt="Color degradado14" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado14.webp');" class="rounded popover-image" id="imagenes">
+					<img th:attr="data-src=@{/Images/degradado15.webp}" decoding="async" alt="Color degradado15" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado15.webp');" class="rounded popover-image" id="imagenes">
+					<img th:attr="data-src=@{/Images/degradado16.webp}" decoding="async" alt="Color degradado16" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado16.webp');" class="rounded popover-image" id="imagenes">
 				</div>
 				<div>
-					<img th:src="@{Images/degradado17.png}" alt="Color degradado17" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado17.png');" class="rounded popover-image" id="imagenes">
-					<img th:src="@{Images/degradado18.png}" alt="Color degradado18" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado18.png');" class="rounded popover-image" id="imagenes">	
+					<img th:attr="data-src=@{/Images/degradado17.webp}" decoding="async" alt="Color degradado17" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado17.webp');" class="rounded popover-image" id="imagenes">
+					<img th:attr="data-src=@{/Images/degradado18.webp}" decoding="async" alt="Color degradado18" width="50px" height="30px" onclick="guardarRutaImagen('/Images/degradado18.webp');" class="rounded popover-image" id="imagenes">
                 </div>
                 <div><p id='fondosTitulos'>Animaciones</p></div>
                 <div class='d-flex flex-wrap align-content-between'>
-					<img th:src="@{Images/animacion1.gif}" alt="Color animacion1" width="50px" height="30px" onclick="guardarRutaImagen('/Images/animacion1.gif');" class="rounded popover-image" id="imagenes">
-                    <img th:src="@{Images/animacion2.gif}" alt="Color animacion2" width="50px" height="30px" onclick="guardarRutaImagen('/Images/animacion2.gif');" class="rounded popover-image" id="imagenes">
-                    <img th:src="@{Images/animacion3.gif}" alt="Color animacion3" width="50px" height="30px" onclick="guardarRutaImagen('/Images/animacion3.gif');" class="rounded popover-image" id="imagenes">
-                    <img th:src="@{Images/animacion4.gif}" alt="Color animacion4" width="50px" height="30px" onclick="guardarRutaImagen('/Images/animacion4.gif');" class="rounded popover-image" id="imagenes">
+					<img th:attr="data-src=@{/Images/previews/animacion1.webp}" decoding="async" alt="Color animacion1" width="50px" height="30px" onclick="guardarRutaImagen('/Images/animacion1.webp');" class="rounded popover-image" id="imagenes">
+                    <img th:attr="data-src=@{/Images/previews/animacion2.webp}" decoding="async" alt="Color animacion2" width="50px" height="30px" onclick="guardarRutaImagen('/Images/animacion2.webp');" class="rounded popover-image" id="imagenes">
+                    <img th:attr="data-src=@{/Images/previews/animacion3.webp}" decoding="async" alt="Color animacion3" width="50px" height="30px" onclick="guardarRutaImagen('/Images/animacion3.webp');" class="rounded popover-image" id="imagenes">
+                    <img th:attr="data-src=@{/Images/previews/animacion4.webp}" decoding="async" alt="Color animacion4" width="50px" height="30px" onclick="guardarRutaImagen('/Images/animacion4.webp');" class="rounded popover-image" id="imagenes">
                 </div>
                 <div>
-                     <img th:src="@{Images/animacion5.gif}" alt="Color animacion5" width="50px" height="30px" onclick="guardarRutaImagen('/Images/animacion5.gif');" class="rounded popover-image" id="imagenes">
-                     <img th:src="@{Images/animacion6.gif}" alt="Color animacion6" width="50px" height="30px" onclick="guardarRutaImagen('/Images/animacion6.gif');" class="rounded popover-image" id="imagenes">
-                     <img th:src="@{Images/animacion7.gif}" alt="Color animacion7" width="50px" height="30px" onclick="guardarRutaImagen('/Images/animacion7.gif');" class="rounded popover-image" id="imagenes">
-                     <img th:src="@{Images/animacion8.gif}" alt="Color animacion8" width="50px" height="30px" onclick="guardarRutaImagen('/Images/animacion8.gif');" class="rounded popover-image" id="imagenes">
+                     <img th:attr="data-src=@{/Images/previews/animacion5.webp}" decoding="async" alt="Color animacion5" width="50px" height="30px" onclick="guardarRutaImagen('/Images/animacion5.webp');" class="rounded popover-image" id="imagenes">
+                     <img th:attr="data-src=@{/Images/previews/animacion6.webp}" decoding="async" alt="Color animacion6" width="50px" height="30px" onclick="guardarRutaImagen('/Images/animacion6.webp');" class="rounded popover-image" id="imagenes">
+                     <img th:attr="data-src=@{/Images/previews/animacion7.webp}" decoding="async" alt="Color animacion7" width="50px" height="30px" onclick="guardarRutaImagen('/Images/animacion7.webp');" class="rounded popover-image" id="imagenes">
+                     <img th:attr="data-src=@{/Images/previews/animacion8.webp}" decoding="async" alt="Color animacion8" width="50px" height="30px" onclick="guardarRutaImagen('/Images/animacion8.webp');" class="rounded popover-image" id="imagenes">
                 </div>
                 <div>
-                     <img th:src="@{Images/animacion9.gif}" alt="Color animacion9" width="50px" height="30px" onclick="guardarRutaImagen('/Images/animacion9.gif');" class="rounded popover-image" id="imagenes">
-                     <img th:src="@{Images/animacion10.gif}" alt="Color animacion10" width="50px" height="30px" onclick="guardarRutaImagen('/Images/animacion10.gif');" class="rounded popover-image" id="imagenes">
+                     <img th:attr="data-src=@{/Images/previews/animacion9.webp}" decoding="async" alt="Color animacion9" width="50px" height="30px" onclick="guardarRutaImagen('/Images/animacion9.webp');" class="rounded popover-image" id="imagenes">
+                     <img th:attr="data-src=@{/Images/previews/animacion10.webp}" decoding="async" alt="Color animacion10" width="50px" height="30px" onclick="guardarRutaImagen('/Images/animacion10.webp');" class="rounded popover-image" id="imagenes">
 
                 
             </dialog>
@@ -240,6 +240,10 @@
     function mostrarFondos() {
         const dialog = document.getElementById('imagenesFondo');
         if (dialog) {
+            dialog.querySelectorAll('img[data-src]').forEach(function (image) {
+                image.src = image.dataset.src;
+                image.removeAttribute('data-src');
+            });
             dialog.showModal();
         }
     }

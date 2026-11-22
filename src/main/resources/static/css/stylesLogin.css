@@ -1,6 +1,22 @@
-body{
-   background-image: url("/Images/fondoLogin.gif");	
-   background-size: 1920px 1020px;
+body {
+    position: relative;
+    min-height: 100vh;
+    isolation: isolate;
+    background: #100023 url("/Images/fondoLogin-poster.webp") center / cover fixed no-repeat;
+}
+
+.fondo-animado {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fondo-animado { display: none; }
 }
 
 .toast {
