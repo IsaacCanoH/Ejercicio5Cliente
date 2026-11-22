@@ -270,7 +270,9 @@ public class GestorController {
 		String urlservicebd = apiBaseUrl + "/addComentario";
 		ResponseEntity<Integer> response = template.postForEntity(urlservicebd, comentarios, Integer.class);
 
-		return response;
+		return ResponseEntity
+				.status(response.getStatusCode())
+				.body(response.getBody());
 	}
 
 	@PostMapping("/actualizarTarea")
@@ -308,7 +310,9 @@ public class GestorController {
 		String urlservicebd = apiBaseUrl + "/addTareas";
 		RestTemplate template = new RestTemplate();
 		ResponseEntity<Integer> response = template.postForEntity(urlservicebd, paramName, Integer.class);
-		return response;
+		return ResponseEntity
+				.status(response.getStatusCode())
+				.body(response.getBody());
 	}
 
 	@PostMapping("/cambiosTareas")
@@ -316,7 +320,9 @@ public class GestorController {
 		String urlservicebd = apiBaseUrl + "/updateTareas";
 		RestTemplate template = new RestTemplate();
 		ResponseEntity<Integer> response = template.postForEntity(urlservicebd, paramDatos, Integer.class);
-		return response;
+		return ResponseEntity
+				.status(response.getStatusCode())
+				.body(response.getBody());
 	}
 
 	@PostMapping("/consultarTareas")

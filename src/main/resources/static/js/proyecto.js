@@ -451,12 +451,15 @@ function guardarComentario(){
 	}
 	$('#avisoTarea').remove();
 	let now = new Date();
-	let day = ('0' + now.getDate()).slice(-2);        // Día del mes (dos dígitos)
-	let month = ('0' + (now.getMonth() + 1)).slice(-2); // Mes (dos dígitos)
-	let year = now.getFullYear().toString().slice(-2); // Año (dos últimos dígitos)
-	let hour = ('0' + now.getHours()).slice(-2);       // Hora (dos dígitos)
-	let minute = ('0' + now.getMinutes()).slice(-2);   // Minutos (dos dígitos)
-	let fecha = `${year}/${month}/${day} ${hour}:${minute}`;
+
+	let year = now.getFullYear();
+	let month = String(now.getMonth() + 1).padStart(2, '0');
+	let day = String(now.getDate()).padStart(2, '0');
+	let hour = String(now.getHours()).padStart(2, '0');
+	let minute = String(now.getMinutes()).padStart(2, '0');
+	let second = String(now.getSeconds()).padStart(2, '0');
+
+	let fecha = `${year}-${month}-${day} ${hour}:${minute}:${second}`;
 	
 	var usuarioString = localStorage.getItem("usuario");
 	var usuario = JSON.parse(usuarioString);
