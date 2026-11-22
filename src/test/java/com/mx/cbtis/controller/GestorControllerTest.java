@@ -108,7 +108,7 @@ class GestorControllerTest {
     @BeforeEach
     void preparar() {
         // Las vistas se comprueban por nombre y modelo; el HTML real lo validan los IT.
-        mvc = MockMvcBuilders.standaloneSetup(new GestorController())
+        mvc = MockMvcBuilders.standaloneSetup(new GestorController(API))
                 .setViewResolvers(new InternalResourceViewResolver("/templates/", ".html"))
                 .build();
     }
