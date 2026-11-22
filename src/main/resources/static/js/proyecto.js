@@ -12,7 +12,7 @@ $(document).ready(function() {
 			type: 'POST',
 			data: $(formulario).serialize(),
 			success: function() {
-				window.location.href = 'proyecto?id_proyecto=' + $('#IdProyectoURL').val();
+				window.location.reload();
 			},
 			error: function() {
 				mostrarAvisoTarea('No fue posible guardar los cambios de la tarea. Intenta de nuevo.', '#editarTarea .modal-body');
@@ -316,11 +316,9 @@ function validarTarea(){
 		contentType:"application/json",
 		data : JSON.stringify({nombre:$("#inputTarea").val(), lista:$("#estado").val(), id_proyecto: id_proyecto}),
 		type : "POST",
-		success: function(data){
-			console.log(data);
-            var id = document.getElementById("IdProyectoURL").value;
-			var url = `proyecto?id_proyecto=${id}`;
-            window.location.href= url;}
+		success: function(data) {
+			window.location.reload();
+		}
 	})
 }
 
@@ -337,11 +335,9 @@ function validarTarea2(){
 		contentType:"application/json",
 		data : JSON.stringify({nombre:$("#inputTarea2").val(), lista:$("#estado2").val(), id_proyecto: id_proyecto}),
 		type : "POST",
-		success: function(data){
-			console.log(data);
-            var id = document.getElementById("IdProyectoURL").value;
-			var url = `proyecto?id_proyecto=${id}`;
-            window.location.href= url;}
+		success: function(data) {
+			window.location.reload();
+		}
 	})
 }
 function validarTarea3(){
@@ -359,11 +355,9 @@ function validarTarea3(){
 		contentType:"application/json",
 		data : JSON.stringify({nombre:$("#inputTarea3").val(), lista:$("#estado3").val(), id_proyecto: id_proyecto}),
 		type : "POST",
-		success: function(data){
-			console.log(data);
-            var id = document.getElementById("IdProyectoURL").value;
-			var url = `proyecto?id_proyecto=${id}`;
-            window.location.href= url;}
+		success: function(data) {
+			window.location.reload();
+		}
 	})
 }
 
@@ -374,10 +368,9 @@ function eliminarTarea(id_tarea){
 		contentType:"application/json",
 		data : JSON.stringify({id_tarea:id_tarea}),
 		type : "POST",
-		success: function(){
-			var id = document.getElementById("IdProyectoURL").value;
-			var url = `proyecto?id_proyecto=${id}`;
-            window.location.href= url;},
+		success: function() {
+			window.location.reload();
+		},
 		error: function() {
 			var destino = $('#modalAlerta').hasClass('show') ? '#modalAlerta .modal-body' : '#avisosTareas';
 			mostrarAvisoTarea('No fue posible eliminar la tarea. Intenta de nuevo.', destino);
@@ -474,15 +467,9 @@ function guardarComentario(){
                 id_usuario: usuario.nombre
             }),
             type: 'POST',
-            success: function(response) {
-				
-                // Manejar la respuesta del servidor según sea necesario
-                console.log('Comentario guardado exitosamente');
-                // Puedes actualizar la UI si es necesario
-                var id = document.getElementById("IdProyectoURL").value;
-				var url = `proyecto?id_proyecto=${id}`;
-	            window.location.href= url;
-            },
+            success: function() {
+				window.location.reload();
+			},
             error: function(error) {
                 console.error('Error al guardar el comentario:', error);
                 mostrarAvisoTarea('No fue posible guardar el comentario. Intenta de nuevo.', '#editarTarea .modal-body');
