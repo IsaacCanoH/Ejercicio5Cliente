@@ -15,6 +15,10 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 20
 
+    env:
+      MONITORING_USERNAME: monitor_ci
+      MONITORING_PASSWORD: monitoreo_ci_temporal
+
     steps:
       - name: Obtener codigo
         uses: actions/checkout@v7
