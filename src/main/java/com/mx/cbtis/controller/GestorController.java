@@ -147,10 +147,12 @@ public class GestorController {
 	public ResponseEntity<Usuario> verificarUsuario(@RequestBody Usuario paramUser) {
 		String urlservicebd = apiBaseUrl + "/getUsuarioLogin";
 		RestTemplate template = new RestTemplate();
+
 		ResponseEntity<Usuario> response = template.postForEntity(urlservicebd, paramUser, Usuario.class);
 
-		return response;
-
+		return ResponseEntity
+				.status(response.getStatusCode())
+				.body(response.getBody());
 	}
 
 	/*
