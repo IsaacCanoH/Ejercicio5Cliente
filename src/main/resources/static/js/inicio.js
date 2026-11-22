@@ -146,7 +146,7 @@ function mostrarAvisoProyecto(mensaje, destino) {
 function asignarFondo(){
 	console.log(document.getElementById("fondo").value);
 	if(document.getElementById("fondo").value == ""){
-		document.getElementById("fondo").value = "/Images/blanco.png"; 
+		document.getElementById("fondo").value = "/Images/blanco.webp";
 	}   
 }
 
@@ -154,7 +154,7 @@ function asignarFondoEditar() {
     const fondo = document.getElementById("editar_fondo");
 
     if (fondo.value === "") {
-        fondo.value = "/Images/blanco.png";
+        fondo.value = "/Images/blanco.webp";
     }
 }
 

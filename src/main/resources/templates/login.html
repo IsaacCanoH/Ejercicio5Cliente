@@ -12,13 +12,19 @@
 <script th:src="@{js/bootstrap.js}"></script>
 <script th:src="@{js/login.js}"></script> 
 <body>
+    <video class="fondo-animado" muted loop playsinline preload="none"
+           th:poster="@{/Images/fondoLogin-poster.webp}" data-background-video aria-hidden="true" tabindex="-1">
+        <source th:attr="data-src=@{/Images/fondoLogin.mp4}" type="video/mp4">
+    </video>
+    <script th:src="@{/js/fondo-animado.js}" defer></script>
+
 
     <!--Encabezado-->
     
     <nav class="navbar bg-body-tertiary navbar-expand-md">
         <div class="container-fluid">
           <a class="navbar-brand">
-            <img th:src="@{Images/logo.png}" alt="Logo" width="35" height="24" class="d-inline-block align-text-top">
+            <img th:src="@{Images/logo.webp}" alt="Logo" width="35" height="24" class="d-inline-block align-text-top">
             Proyecto.ppml
           </a>
         </div>

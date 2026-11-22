@@ -19,14 +19,15 @@
 				left: 0;
 				width: 100%;
 				height: 100%;
-				object-fit: cover;
+				object-fit: contain;
+                background: #000;
 			}
 		</style>
 		
 	</head>
 	<body>
-		<video autoplay loop controls>
-			<source th:src="@{Images/manual.mp4}" type="video/mp4">
+		<video controls playsinline preload="metadata" th:poster="@{/Images/manual-poster.webp}">
+			<source th:src="@{/Images/manual.mp4}" type="video/mp4">
 			Tu navegador no soporta la etiqueta de video
 		</video>
 	</body>

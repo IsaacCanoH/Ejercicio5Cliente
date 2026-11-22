@@ -108,7 +108,7 @@
             <i class="fas fa-bars"></i>
         </label>
         <a href="#" class="enlace">
-            <img th:src="@{Images/logo.png}" id="logo">
+            <img th:src="@{Images/logo.webp}" id="logo">
         </a>
         <ul>
 			<li><a th:href="@{/login}" id="ingresar">Ingresar</a></li>
@@ -197,10 +197,9 @@
         </div>
     </div>-->
     <section>
-        <img th:src="@{Images/fondo.jpg}" class="img-fluid" alt="BIENVENIDOS" id="fondo">
+        <img th:src="@{Images/fondo.webp}" class="img-fluid" alt="BIENVENIDOS" id="fondo">
     </section>
     <script th:src="@{js/jquery-3.7.1.min.js}"></script>
-    <script th:src="@{js/pplmproyecto.js}"></script>
     <script>
         function openPopup(id) {
             document.getElementById(id).style.display = "block";
@@ -223,32 +222,7 @@
             event.preventDefault(); 
             openPopup('overlay-contacto'); 
         });
-        var registroLink = document.querySelector('#registro');
-        registroLink.addEventListener('click', function(event) {
-            event.preventDefault();
-            openPopup('overlay-registro');
-        });
     </script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var formRegistro = document.getElementById('form-registro');
-
-        formRegistro.addEventListener('submit', function(event) {
-            event.preventDefault(); 
-
-            var nombre = document.getElementById('nombre').value;
-            var email = document.getElementById('email').value;
-            var password = document.getElementById('password').value;
-
-            if (nombre === '' || email === '' || password === '') {
-               
-                alert('Por favor, completa todos los campos.');
-                return;
-            }
-            formRegistro.submit();
-        });
-    });
-</script>
 
 </body>
 

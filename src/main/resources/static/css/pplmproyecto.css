@@ -62,7 +62,7 @@ li a.active, li a:hover {
 }
 
 section {
-    background: url('fondo.jpg') no-repeat center center;
+    background: url('/Images/fondo.webp') no-repeat center center;
     background-size: cover;
     height: calc(100vh - 80px);
      
