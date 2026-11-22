@@ -1,0 +1,17 @@
+.git
+target
+docs
+src/test
+.vscode
+.idea
+.settings
+.classpath
+.project
+.env
+.env.*
+*.log
+node_modules
+test-results
+playwright-report
+HELP.md
+README.md
